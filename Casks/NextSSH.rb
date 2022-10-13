@@ -1,21 +1,16 @@
 cask "nextssh" do
   name "NextSSH"
-  desc "简洁直观的 SSH 客户端"
+  desc "简洁直观的SSH客户端"
   homepage "https://codemutex.com/"
 
-  version "2.1.0"
+  version "2.2.0"
   arch arm: "-arm64", intel: ""
-  sha256 arm:   "a13723a3989aa52d0f3ed809a85ecd52229d84dd6bfc2386b62be8d598dd8cf0",
-         intel: "114ef4ba6672d673b28afe1c6f075c6908d9e268427667493750c2a608328fa8"
+  sha256 arm:   "cfc328e5630c29910b023fd7ea5c107fb094d567b60cccd049a939896ef80d09",
+         intel: "e4c86fde6c178c17249070cf06c906e844600659d36f40ad396bd496217cbd1a"
 
-  url "https://github.com/codemutex/NextSSH-userland/releases/download/v#{version}/NextSSH-#{version}#{arch}.dmg"
+  url arm:   "https://github.com/codemutex/NextSSH-userland/releases/download/v2.2.0/NextSSH-2.2.0-arm64.dmg",
+      intel: "https://github.com/codemutex/NextSSH-userland/releases/download/v2.2.0/NextSSH-2.2.0.dmg"
+  # url "https://github.com/codemutex/NextSSH-userland/releases/download/v#{version}/NextSSH-#{version}#{arch}.dmg"
 
   app "NextSSH.app"
-
-  livecheck do
-    url "https://github.com/codemutex/NextSSH-userland/releases/latest"
-    strategy :page_match
-    # regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/NextSSH-.*?\.dmg}i)
-    regex(/NextSSH v(\d+(?:\.\d+)+)/)
-  end
 end
