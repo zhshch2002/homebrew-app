@@ -1,5 +1,5 @@
-cask "NextSSH" do
-  name "NextSSH"
+cask "nextssh" do
+  name "nextssh"
   desc "简洁直观的SSH客户端"
   homepage "https://codemutex.com/"
 
